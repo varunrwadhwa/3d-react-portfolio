@@ -36,7 +36,7 @@ const Contact = () => {
     const formData = new FormData(event.target);
     setLoading(true);
 
-    formData.append("access_key", "5f5b91cf-2fc6-4dc3-9cd2-dc8838e33f09");
+    formData.append("access_key", "80760b16-bee5-4299-aefb-0ddd9f65165d");
 
     const object = Object.fromEntries(formData);
     const json = JSON.stringify(object);
@@ -49,8 +49,10 @@ const Contact = () => {
       },
       body: json
     }).then(
-      () => {
+      async (response) => {
         setLoading(false);
+        const data = await response.json();
+        console.log("Response:", data);
         alert("Thank you. I will get back to you as soon as possible.");
 
         setForm({
@@ -61,15 +63,12 @@ const Contact = () => {
       },
       (error) => {
         setLoading(false);
-        console.error(error);
+        console.error("Error:", error);
 
         alert("Ahh, something went wrong. Please try again.");
       }
     );
 
-    if (res.success) {
-      console.log("Success", res);
-    }
   };
 
   // const handleSubmit = (e) => {
@@ -82,7 +81,7 @@ const Contact = () => {
   //       'template_5g175sf',
   //       {
   //         from_name: form.name,
-  //         to_name: "Aarti Rathi",
+  //         to_name: "Varun Wadhwa",
   //         from_email: form.email,
   //         to_email: "aarti.rathi1710@gmail.com",
   //         message: form.message,
@@ -139,7 +138,7 @@ const Contact = () => {
               name='name'
               value={form.name}
               onChange={handleChange}
-              placeholder="What's your good name?"
+              placeholder="What's your name?"
               className='bg-tertiary py-3 px-3 placeholder:text-secondary text-white rounded-lg border-none font-medium'
             />
           </label>
@@ -150,7 +149,7 @@ const Contact = () => {
               name='email'
               value={form.email}
               onChange={handleChange}
-              placeholder="What's your web address?"
+              placeholder="What's your Email?"
               className='bg-tertiary py-3 px-3 placeholder:text-secondary text-white rounded-lg border-none font-medium'
             />
           </label>
@@ -161,7 +160,7 @@ const Contact = () => {
               name='message'
               value={form.message}
               onChange={handleChange}
-              placeholder='What you want to say?'
+              placeholder='Type your message here...'
               className='bg-tertiary py-3 px-3 placeholder:text-secondary text-white rounded-lg border-none font-medium'
             />
           </label>
@@ -178,12 +177,12 @@ const Contact = () => {
         <div className="mt-5 contact__options">
           <article className="contact__option">
             <MdEmail />
-            <a href="mailto:aarti.rathi1710@gmail.com" target="_blank" className="blue-text-gradient">aarti.rathi1710@gmail.com</a>
+            <a href="mailto:varunwadhwa70913@gmail.com" target="_blank" className="blue-text-gradient">varunwadhwa70913@gmail.com</a>
           </article>
           <article className="contact__option">
             <BsWhatsapp />
-            <a href="https://api.whatsapp.com/send/?phone=917040031669&text&app_absent=0&lang=en" target="_blank" className="blue-text-gradient">
-              +91 7040031669
+            <a href="https://api.whatsapp.com/send/?phone=9372238237&text&app_absent=0&lang=en" target="_blank" className="blue-text-gradient">
+              +91 9372238237
             </a>
           </article>
         </div>

@@ -1,9 +1,11 @@
-import logo from "./arr.svg";
+import logo from "./vw.png";
 import aarti from "./photo2.jpg";
 import backend from "./backend.png";
 import creator from "./creator.png";
 import mobile from "./mobile.png";
 import web from "./web.png";
+
+import juniorcollege from "./juniorcollege.png";
 
 import github from "./github.png";
 import demo from "./demo.png"
@@ -72,5 +74,5 @@ export {
   oop,crud,dwld,onetomany,yml,
   trie,ds,cg,
   port_3d, jsp, chitchat, notes, react1,
-  be,sql, mini, snl,
+  be,sql, mini, snl,juniorcollege
 };
