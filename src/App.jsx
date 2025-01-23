@@ -5,7 +5,7 @@ import {Contact, Profile, Achievement, Experience, Education, Hero, Navbar, Tech
 const App = () => {
   return (
     <div>
-    <BrowserRouter>
+    <BrowserRouter basename="/3d-react-portfolio">
       <div className='relative z-0 bg-primary'>
         <div className='bg-hero-pattern bg-cover bg-no-repeat bg-center'>
           <Navbar />
